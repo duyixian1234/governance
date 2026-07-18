@@ -1,0 +1,32 @@
+# Governance task runner template.
+# This example uses a Python/uv toolchain. Replace command variables for the target project.
+
+set dotenv-load := false
+
+python := "uv run python"
+formatter := "uv run ruff format ."
+formatter_check := "uv run ruff format --check ."
+linter := "uv run ruff check ."
+tester := "uv run pytest -q"
+builder := "uv build"
+link_checker := python + " scripts/check-links.py"
+
+# Format source files.
+format:
+    {{formatter}}
+
+# Format check must fail before lint runs.
+check:
+    {{formatter_check}}
+    {{linter}}
+
+test:
+    {{tester}}
+
+build:
+    {{builder}}
+
+check-links:
+    {{link_checker}}
+
+ci: check test build check-links

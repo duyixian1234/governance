@@ -1,0 +1,14 @@
+{
+  "name": "replace-with-project-name",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9",
+  "scripts": {
+    "format": "pnpm exec prettier --write .",
+    "check": "pnpm exec prettier --check . && pnpm exec eslint . --max-warnings 0",
+    "test": "pnpm exec vitest run --reporter=basic",
+    "build": "pnpm exec tsc --noEmit && pnpm exec vite build",
+    "check-links": "python3 scripts/check-links.py",
+    "ci": "pnpm run check && pnpm run test && pnpm run build && pnpm run check-links"
+  }
+}

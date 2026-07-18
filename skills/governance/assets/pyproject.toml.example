@@ -1,0 +1,36 @@
+# Copy this file to pyproject.toml and replace project-specific placeholders.
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "replace-with-project-name"
+version = "0.1.0"
+description = "Replace with the project description."
+requires-python = ">=3.9"
+readme = "README.md"
+license = { text = "Replace with the project license" }
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "build>=1.2",
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[tool.hatch.build.targets.wheel]
+# Replace with the actual import package directory.
+packages = ["src/replace_with_package"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
