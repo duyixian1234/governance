@@ -1,5 +1,7 @@
 # Governance Skills
 
+[![skills.sh](https://skills.sh/b/duyixian1234/governance)](https://skills.sh/duyixian1234/governance)
+
 A portable Agent Skill for establishing and improving project governance across languages, frameworks, and collaboration models.
 
 The repository packages a governance methodology for both **AI Code Agents** and human collaborators. It turns document ownership, architecture decisions, task workflows, quality gates, commit discipline, security boundaries, and release practices into a repeatable workflow.
